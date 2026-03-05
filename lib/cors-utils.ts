@@ -23,13 +23,13 @@ export function addCorsToFetchOptions(options: RequestInit = {}): RequestInit {
 
 // Function to create a URL with the correct API base
 export function createApiUrl(endpoint: string): string {
-  const API_BASE_URL = "http://139.28.37.39:5000/api"
+  const API_BASE_URL = "https://api.xoperr.dev/api"
 
   // Handle different endpoint formats
   if (endpoint.startsWith("http")) {
     return endpoint
   } else if (endpoint.startsWith("/api")) {
-    return `http://139.28.37.39:5000${endpoint.substring(4)}`
+    return `https://api.xoperr.dev${endpoint.substring(4)}`
   } else {
     return `${API_BASE_URL}${endpoint.startsWith("/") ? endpoint : "/" + endpoint}`
   }

@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://139.28.37.39:5000/api/:path*',
+        destination: 'https://api.xoperr.dev/api/:path*',
       },
     ];
   },

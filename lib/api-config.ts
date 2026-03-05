@@ -1,7 +1,7 @@
 // Use direct API URL for requests
 import { createApiUrl } from "./cors-utils"
 
-export const API_BASE_URL = "http://139.28.37.39:5000/api"
+export const API_BASE_URL = "https://api.xoperr.dev/api"
 
 export async function fetchWithAuth(endpoint: string, options: RequestInit = {}) {
   // Get token from localStorage on client side only

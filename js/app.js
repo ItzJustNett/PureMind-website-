@@ -1,5 +1,5 @@
 // Global variables
-const API_BASE_URL = "http://149.28.37.39:5000" // External server IP and port
+const API_BASE_URL = "https://api.xoperr.dev" // External server IP and port
 
 // Setup fetch with authentication
 async function fetchWithAuth(endpoint, options = {}) {

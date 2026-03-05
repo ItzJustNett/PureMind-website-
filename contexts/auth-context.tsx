@@ -43,7 +43,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       console.log("Attempting login with:", { username })
 
       // Use direct API URL to avoid CORS issues
-      const response = await fetch("http://139.28.37.39:5000/api/auth/login", {
+      const response = await fetch("https://api.xoperr.dev/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -83,7 +83,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const register = async (username: string, password: string, email: string) => {
     try {
       // Use direct API URL to avoid CORS issues
-      const response = await fetch("http://139.28.37.39:5000/api/auth/register", {
+      const response = await fetch("https://api.xoperr.dev/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -120,7 +120,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       if (token) {
         // Make API request to logout
-        fetch("http://139.28.37.39:5000/api/auth/logout", {
+        fetch("https://api.xoperr.dev/api/auth/logout", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

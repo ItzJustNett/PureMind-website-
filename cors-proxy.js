@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 app.use(
   "/api",
   createProxyMiddleware({
-    target: "http://139.28.37.39:5000",
+    target: "https://api.xoperr.dev",
     changeOrigin: true,
     pathRewrite: {
       "^/api": "/api", // Keep /api prefix when forwarding

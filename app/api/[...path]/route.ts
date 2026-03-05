@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 
 // Make sure we're using the correct API base URL
-const API_BASE_URL = "http://139.28.37.39:5000/api"
+const API_BASE_URL = "https://api.xoperr.dev/api"
 
 // Helper function to add CORS headers to the response
 function addCorsHeaders(response: Response | NextResponse) {
