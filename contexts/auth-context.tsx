@@ -47,12 +47,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type, Authorization",
         },
         body: JSON.stringify({ username, password }),
-        mode: "cors",
       })
 
       if (!response.ok) {
@@ -87,12 +83,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-          "Access-Control-Allow-Headers": "Content-Type, Authorization",
         },
         body: JSON.stringify({ username, password, email }),
-        mode: "cors",
       })
 
       if (!response.ok) {
@@ -125,11 +117,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-            "Access-Control-Allow-Headers": "Content-Type, Authorization",
           },
-          mode: "cors",
         }).catch((error) => console.error("Logout error:", error))
       }
 
