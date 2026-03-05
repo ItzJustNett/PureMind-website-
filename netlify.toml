@@ -1,6 +1,5 @@
 [build]
   command = "npm run build"
-  functions = "netlify/functions"
   publish = ".next"
 
 [build.environment]
@@ -13,37 +12,6 @@
   status = 200
   force = true
 
-# Fix static file serving for Next.js
-[[redirects]]
-  from = "/_next/static/*"
-  to = "/.netlify/functions/___netlify-server-handler?__nf_path=/_next/static/:splat"
-  status = 200
-
-# Ensure all routes are handled by Next.js for client-side routing
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/___netlify-server-handler?__nf_path=:splat"
-  status = 200
-
-# Correct MIME types for JavaScript chunks
-[[headers]]
-  for = "/_next/static/chunks/*.js"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/_next/static/*.js"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
-    Cache-Control = "public, max-age=31536000, immutable"
-
-# Cache all static assets
-[[headers]]
-  for = "/_next/static/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
 # Security headers
 [[headers]]
   for = "/*"
@@ -55,3 +23,10 @@
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "application/javascript; charset=utf-8"
